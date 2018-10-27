@@ -337,3 +337,17 @@ button:active {
     transform: scale(.95);
     box-shadow: none;
 }
+button:hover {
+    cursor: pointer;
+}
+
+.fake-btn {
+    background-color: transparent;
+    border: none;
+    font-family: 'Fjalla One', sans-serif;
+    padding: 0;
+    font-size: 14px;
+}
+ .fake-btn:hover {
+     cursor: pointer;
+ }
