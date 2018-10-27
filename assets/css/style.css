@@ -1,0 +1,339 @@
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "hdr"
+        "srch"
+        "ftr";
+    grid-template-rows: 50px calc(100vh - 86px) 35px; 
+    font-family: 'Open Sans', sans-serif;
+    min-height: 100vh;
+}
+
+
+
+
+header {
+    background-color: #ff6a5c;
+    grid-area: hdr;
+    color: white;
+    padding: 5px;
+    position: relative;
+    z-index: 3;
+    box-shadow: 0 1px 15px -2px #414141;
+    
+}
+
+header h1, header p {
+    display: inline;
+}
+
+header h1 {
+    font-size: 40px;
+    font-family: 'Fjalla One', sans-serif;
+}
+
+header p {
+    font-family: 'Open Sans', sans-serif;
+}
+
+header p a {
+    text-decoration: none;
+    color: white;
+}
+
+
+
+
+#search-div {
+    background-color: #CCDFCB;
+    grid-area: srch;
+    padding: 15px;
+    position: relative;
+    box-shadow: 145px 6px 15px #414141;
+    display: grid;
+    grid-template-rows: min-content min-content 1fr;
+    grid-gap: 3px;
+    
+}
+
+form {
+    margin: 15px auto;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#search-buttons {
+    
+}
+
+input[type=text] {
+    position: relative;
+    padding: 12px 20px 12px 30px;
+    width: 150px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgb(241, 241, 241);
+    background-image: url('../images/search-icon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+}
+
+input[type=text]:focus {
+    outline: none;
+    box-shadow: 0 0 3px black;
+    
+}
+
+input[type=submit] {
+    position: relative;
+    padding: 12px 20px;
+    width: 100px;
+    background-color: #ff6a5c;
+    border: none;
+    color: white;
+    border-radius: 50px;
+    box-shadow: 3px 3px 15px -2px #414141;
+    transition-property: transform, box-shadow;
+    transition-duration: .3s;
+}
+
+input[type=submit]:focus {
+    outline: none;
+}
+
+input[type=submit]:active {
+    transform: scale(.95);
+    box-shadow: none;
+}
+
+#search-buttons button {
+    padding: 12px 20px;
+    background-color: #ff6a5c;
+    border: none;
+    color: white;
+    border-radius: 50px;
+    margin: 5px;
+    box-shadow: 3px 3px 15px -2px #414141;
+    transition-property: transform, box-shadow;
+    transition-duration: .3s;
+}
+
+#search-buttons button:active {
+    transform: scale(.95);
+    box-shadow: none;
+}
+
+
+
+.giphy-tiles {
+    width: 100%;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 5px;
+    overflow-y: scroll;
+}
+
+.gif-container {
+    position: relative;
+    align-self: center;
+    display: grid;
+    grid-template-areas:
+        "gif gif"
+        "p btn";
+}
+
+.gif-container img {
+   width: 100%;
+   grid-area: gif;
+}
+
+.gif-container p {
+    grid-area: p;
+    font-family: 'Fjalla One', sans-serif;
+    align-self: center;
+    justify-self: start;
+}
+
+.gif-container button {
+    grid-area: btn;
+    padding: 4px 4px;
+    background-color: #ff6a5c;
+    border: none;
+    color: white;
+    border-radius: 50px;
+    margin: 3px;
+    box-shadow: 3px 3px 15px -2px #414141;
+}
+
+
+
+
+#favorites-div {
+    background-color: #056571;
+    grid-area: srch;
+    position: relative;
+    box-shadow: -145px 6px 15px #414141;
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    grid-gap: 3px;
+    padding: 15px;
+    text-align: center;
+}
+
+#favorites-div h2 {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 30px;
+    color: white;
+}
+
+#favorite-tiles {
+    width: 100%;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 5px;
+    overflow-y: scroll;
+}
+
+
+
+
+footer {
+    background-color: #414141;
+    height: 100%;
+    grid-area: ftr;
+    display: grid;
+    grid-template-columns: 2fr repeat(2, 1fr) 2fr;
+    
+}
+
+#footer-gifs {
+    background-color: #CCDFCB;
+    border-bottom-right-radius: 8px;
+    text-align: center;
+    padding: 9px;
+    font-family: 'Fjalla One', sans-serif;
+    
+}
+
+#footer-space-gif {
+    background-color: #ccdfcb;
+    
+}
+
+#footer-gif-corner {
+    background-color: #414141;
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 8px;
+    
+    
+}
+
+#footer-favorites {
+    background-color: #056571;
+    border-bottom-left-radius: 8px;
+    text-align: center;
+    padding: 9px;
+    font-family: 'Fjalla One', sans-serif;
+}
+
+#footer-space-fav {
+    background-color: #056571;
+    
+}
+
+#footer-fav-corner {
+    background-color: #414141;
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 8px;
+    
+}
+
+#footer-gifs:hover, #footer-favorites:hover {
+    cursor: pointer;
+}
+
+
+
+@media only screen and (min-width: 768px) {
+    
+    body {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        grid-template-areas:
+            "hdr hdr"
+            "srch fav"
+            "ftr ftr";
+        
+    }
+
+    #favorites-div {
+        grid-area: fav;
+    }
+
+    #favorites-div, #search-div {
+        box-shadow: 0 0 0 transparent;
+    }
+
+    #footer-gifs, #footer-favorites, #footer-space-gif, #footer-space-fav {
+       display: none;
+    }
+    
+    
+   
+   
+    
+}
+
+@media only screen and (min-width: 991px) {
+    body {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+
+
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+    
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+
+button:focus {
+    outline: none;
+}
+
+button {
+    transition-property: transform, box-shadow;
+    transition-duration: .3s;
+}
+
+button:active {
+    transform: scale(.95);
+    box-shadow: none;
+}
